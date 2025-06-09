@@ -3,7 +3,7 @@ var router = express.Router();
 const request = require('request');
 
 router.get('/', async (req, res) => {
-request('https://yesno.wtf/api', function (error, response, body) {
+request('https://restcountries.com/v3.1/independent?status=true&fields=languages,capital', function (error, response, body) {
 if (!error && response.statusCode == 200) {
 const data = JSON.parse(body);
 res.json(data);
